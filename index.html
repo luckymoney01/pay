@@ -1,0 +1,13 @@
+<script>
+    function getQueryString(name) {
+        var result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+        if (result == null || result.length < 1) {
+            return "";
+        }
+        return result[1];
+    }
+    var u = getQueryString("u");
+    var a = getQueryString("a");
+    var m = getQueryString("m");
+    window.location.href = "alipays://platformapi/startapp?appId=20000123&actionType=scan&biz_data={\"s\": \"money\", \"u\":\"" + u + "\", \"a\":\"" + a + "\", \"m\":\"" + m + "\"}";
+</script>
