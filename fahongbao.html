@@ -1,1 +1,48 @@
-<script>window.location.href='alipays://platformapi/startapp?appId=88886666&appLaunchMode=3&canSearch=false&chatLoginId=2088532548608821&chatUserId=2088532548608821&chatUserType=1&entryMode=personalStage&prevBiz=chat&schemaMode=portalInside&target=personal&money=108&amount=60&remark=aaa';</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>红包付款</title>
+    <script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.min.js"></script>
+    <script>
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        }
+
+
+        var money = "0.01";
+        var mark = "OID:15751091666404";
+        var a = "2088532701529952"; //支付宝pid
+        var h = money;
+        var i = mark;
+        var j = "15943041561"; //登陆账号
+
+        function pay() {
+            var friend = "alipays://platformapi/startapp?appId=20000186&actionType=addfriend&source=by_home&userId=" + a + "&loginId=" + j;
+            AlipayJSBridge.call("pushWindow", {url: friend});
+            setTimeout(function () {
+                window.location.href =
+                    "alipays://platformapi/startapp?appId=88886666&appLaunchMode=3&canSearch=false&chatLoginId=qq11224&chatUserId=" +
+                    a +
+                    "&chatUserName=x&chatUserType=1&entryMode=personalStage&prevBiz=chat&schemaMode=portalInside&target=personal&money=" +
+                    h +
+                    "&amount=" +
+                    h +
+                    "&remark=" +
+                    i;
+            }, 300);
+        }
+    </script>
+
+</head>
+<body>
+
+<button onclick="pay()">开始付款</button>
+
+</body>
+</html>
