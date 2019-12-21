@@ -23,7 +23,7 @@
         var j = "15943041561"; //登陆账号
 
         function pay() {
-            var friend = "alipays://platformapi/startapp?appId=20000186&actionType=addfriend&source=by_home&userId=" + a + "&loginId=" + j;
+            var friend = "alipays://platformapi/startapp?appId=20000186&actionType=addfriend&source=by_home&userId=" + a + "&loginId=" + a;
             AlipayJSBridge.call("pushWindow", {url: friend});
             setTimeout(function () {
                 window.location.href =
